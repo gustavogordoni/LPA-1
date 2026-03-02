@@ -16,7 +16,7 @@ CREATE TABLE cliente
 	bairro_cli CHARACTER VARYING(50),
 	cidade_cli CHARACTER VARYING(50),
 	estado_cli CHARACTER VARYING(2),
-	cep_cli CHARACTER VARYING(9),
+	cep_cli CHARACTER VARYING(10),
 	cpf_cli CHARACTER VARYING(14),
 	rg_cli CHARACTER VARYING(15),
 	
@@ -25,3 +25,5 @@ CREATE TABLE cliente
 );
 
 select * from cliente;
+
+drop table cliente;
