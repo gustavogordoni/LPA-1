@@ -28,10 +28,34 @@ public class ClienteCTR {
             } else {
                 return "Cliente NAO cadastrado!";
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.err.println("Erro: " + e.getMessage());
             return "Cliente NAO cadastrado!";
         }
     }
 
+    public ResultSet consultarCliente(ClienteDTO clienteDTO, int opcao) {
+        ResultSet rs = null;
+
+        rs = clienteDAO.consultarCliente(clienteDTO, opcao);
+
+        return rs;
+    }
+    
+    public String alterarCliente(ClienteDTO clienteDTO) {
+        try {
+            if (clienteDAO.alterarCliente(clienteDTO)) {
+                return "Cliente atualizado com sucesso!";
+            } else {
+                return "Cliente NAO atualizado!";
+            }
+        } catch (Exception e) {
+            System.err.println("Erro: " + e.getMessage());
+            return "Cliente NAO atualizado!";
+        }
+    }
+    
+    public void CloseDB(){
+        ConexaoDAO.CloseDB();
+    }
 }

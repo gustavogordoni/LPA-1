@@ -24,6 +24,10 @@ CREATE TABLE cliente
 	CONSTRAINT cliente_cpf_key UNIQUE (cpf_cli)
 );
 
+INSERT INTO cliente VALUES (1, 'Gustavo', 'Logradouro 1', 1, 'Bairro 1', 'Cidade 1', 'SP', '15580000', '99999999999', '9999999999');
+INSERT INTO cliente VALUES (2, 'Cauã', 'Logradouro 2', 2, 'Bairro 2', 'Cidade 2', 'MG', '19580000', '19999999999', '9999999999');
+INSERT INTO cliente VALUES (3, 'Julio', 'Logradouro 3', 3, 'Bairro 3', 'Cidade 3', 'RS', '10580000', '29999999999', '9999999999');
+
 select * from cliente;
 
 drop table cliente;
