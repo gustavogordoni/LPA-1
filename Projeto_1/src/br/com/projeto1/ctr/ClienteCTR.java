@@ -55,6 +55,19 @@ public class ClienteCTR {
         }
     }
     
+    public String excluirCliente(ClienteDTO clienteDTO) {
+        try {
+            if (clienteDAO.excluirCliente(clienteDTO)) {
+                return "Cliente excluído com sucesso!";
+            } else {
+                return "Cliente NAO excluído!";
+            }
+        } catch (Exception e) {
+            System.err.println("Erro: " + e.getMessage());
+            return "Cliente NAO excluído!";
+        }
+    }
+    
     public void CloseDB(){
         ConexaoDAO.CloseDB();
     }

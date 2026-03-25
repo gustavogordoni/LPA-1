@@ -127,4 +127,32 @@ public class ClienteDAO {
         }
 
     }
+
+    public boolean excluirCliente(ClienteDTO clienteDTO) {
+        try {
+            ConexaoDAO.ConectDB();
+
+            stmt = ConexaoDAO.con.createStatement();
+
+            String comando = "DELETE from cliente"
+                    + "where id_cli = " + clienteDTO.getId_cli();
+
+            System.out.println(comando.toUpperCase());
+            stmt.execute(comando.toUpperCase());
+
+            ConexaoDAO.con.commit();
+
+            stmt.close();
+
+            return true;
+
+        } catch (Exception e) {
+            System.out.println("Erro ao realizar a exclusão do cliente na base de dados."
+                    + "\nErro: " + e.getMessage());
+
+            return false;
+        } finally {
+            ConexaoDAO.CloseDB();
+        }
+    }
 }

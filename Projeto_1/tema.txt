@@ -1,0 +1,16 @@
+TEMA: Gestão Financeira
+
+1. Movimentação
+
+1 - id
+2 - nome
+3 - valor
+4 - tipo (Entrada / Saída)
+5 - data (data em que o dinheiro sairá, saiu, entrou ou entrará)
+6 - categoria (texto por enquanto) - Lazer 
+7 - forma_pagamento (dinheiro, cartão, pix…)
+8 - status (pago, pendente)
+9 - observações
+10 - recorrencia - Conta d' água
+11 - usuário (opcional) String
+12 - prioridade (baixa / média / alta)
